@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>fruta nómada</title>
+  <style>
+    html {
+      font-family: Helvetica, Arial, sans-serif;
+      line-height: 1.7;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+
+    html {
+      font-size: 19px;
+    }
+
+    h1 {
+      font-size: 2.5ch;
+    }
+
+    @media (max-width: 600px) {
+      html {
+        font-size: 15px;
+      }
+
+      body {
+        padding: 12px;
+      }
+
+      h1 {
+        font-size: 2.5ch;
+      }
+    }
+
+    @media print {
+      html {
+        background-color: white;
+      }
+
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+
+      p,
+      h2,
+      h3 {
+        orphans: 3;
+        widows: 3;
+      }
+
+      h2,
+      h3,
+      h4 {
+        page-break-after: avoid;
+      }
+    }
+
+    p {
+      margin: 1em 0;
+    }
+
+    a {
+      color: #1a1a1a;
+    }
+
+    a:visited {
+      color: #1a1a1a;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin-top: 1.4em;
+    }
+
+    h5,
+    h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+
+    h6 {
+      font-weight: normal;
+    }
+
+    ol,
+    ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+
+    li>ol,
+    li>ul {
+      margin-top: 0;
+    }
+
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+
+    .sourceCode {
+      background-color: transparent;
+      overflow: visible;
+    }
+
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+
+    table caption {
+      margin-bottom: 0.75em;
+    }
+
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+
+    #TOC li {
+      list-style: none;
+    }
+
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+
+    #TOC>ul {
+      padding-left: 0;
+    }
+
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+
+    code {
+      white-space: pre-wrap;
+    }
+
+    span.smallcaps {
+      font-variant: small-caps;
+    }
+
+    div.columns {
+      display: flex;
+      gap: min(4vw, 1.5em);
+    }
+
+    div.column {
+      flex: auto;
+      overflow-x: auto;
+    }
+
+    div.hanging-indent {
+      margin-left: 1.5em;
+      text-indent: -1.5em;
+    }
+
+    ul.task-list {
+      list-style: none;
+    }
+
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+
+    .display.math {
+      display: block;
+      text-align: center;
+      margin: 0.5rem auto;
+    }
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <h1 id="fruta-nómada-in-extenso">Acerca de Fruta Nómada</h1>
+  <p>En México, el cultivo protegido se ha extendido a varias decenas de
+    miles de hectáreas<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. Sin embargo,
+    cada día con más
+    intensidad y con más frecuencia los agricultores que manejan este tipo
+    de infraestructura se enfrentan a retos cada vez mayores y más difíciles
+    de manejar de plagas y enfermedades, orillando a muchos de ellos a
+    cambiar el cultivo habitual de suelo a un cultivo alienado de este.</p>
+  <p>El lector estará familiarizado con las tecnologías de cultivos
+    hidropónicos, aquapónicos e aeropónicos, los cuales, a través de un
+    manejo extremadamente intensivo y complejo del medio en el que se
+    encuentran las raíces, manipulando concentraciones de distintos
+    compuestos químicos para simular, o mas bien dicho saltarse los procesos
+    naturales que se dan en el suelo.</p>
+  <p>Al no depender del suelo, simplemente reemplazan -desechando el ya
+    usado- o esterilizan el sustrato en el que se encontraban las raíces y
+    empiezan de nuevo. Este es el equivalente a utilizar trastes desechables
+    en lugar de lavar los reutilizables: es extremadamente conveniente pero
+    a costa de un muy alto costo de insumos, complejidad técnica y
+    generación de desechos, los cuales implican impactos adversos
+    externalizados.</p>
+  <p>Además, el uso intensivo de plásticos puede resultar en la ingesta de
+    micro y nanoplásticos a través de los alimentos<a href="#fn2" class="footnote-ref" id="fnref2"
+      role="doc-noteref"><sup>2</sup></a>,
+    uno imaginaría que aún más si estos se encuentran cerca de la raíz.</p>
+  <p>Entonces, ¿Cuál sería el equivalente a lavar los trastes y
+    reutilizarlos, como siempre?</p>
+  <p>Así como con los trastes se lavan con agua y jabón, el suelo se
+    <em>‘limpia’</em> a través de una tecnología inventada hace unos 8’000
+    años<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>: la rotación de cultivos:
+  </p>
+  <p>Simplemente cambia el tipo o familia de planta que creces el
+    siguiente ciclo y así interrumpes, en cierta medida, el ciclo biológico
+    de las plagas y enfermedades.</p>
+  <figure>
+    <img src="nomada-simple.svg" title="concepto de fruta nómada" alt="image" />
+    <figcaption aria-hidden="true">Concepto de fruta nómada</figcaption>
+  </figure>
+  <p>Por poner un ejemplo: el conjunto de nemátodos que formas quistes en
+    las raíces y se alimenta de su savia, son un subconjunto de todos los
+    tipos de nemátodos del suelo, los cuales, además de los fitófagos (que
+    se alimentan de plantas), existen los que se alimentan de bacterias, de
+    hongos de algas, de otros nemátodos y algunas combinaciones.</p>
+  <p>Cuando se tiene la misma planta, en condiciones artificiales como lo
+    son los invernaderos, se tiende a desarrollar un ambiente conducente a
+    la proliferación de organismos que se especializan en vivir a costa de
+    nuestro cultivo.</p>
+  <p>Y, si le vamos sumando ciclo tras ciclo, estos organismos pueden
+    llegar a poblaciones impresionantes en el suelo, produciendo
+    afectaciones económicas que orillan al agricultor a usar agentes
+    antagónicos -ya sean sustancias sintéticas o bien derivadas de
+    organismos o los organismos en sí- que tienden a tener efectos paralelos
+    indeseados en los aplicadores, en lo que se cosecha y en el ambiente que
+    rodea a la parcela protegida, además de los costos financieros extras
+    que esto implica.</p>
+  <p>Hay cultivos que tras su ciclo reducen de forma significativa las
+    poblaciones de los nemátodos formadores de quistes<a href="#fn4" class="footnote-ref" id="fnref4"
+      role="doc-noteref"><sup>4</sup></a>,
+    por lo que se podrían plantar tras nuestro cultivo principal, ¿cierto? o
+    podríamos hacer extractos e inyectarlos por el sistema de riego, o
+    incluso, por ejemplo en el caso del brócoli. picarlo, mezclarlo con el
+    suelo y solarizarlo, ¿no?</p>
+  <p>La última opción la escuché de un agrónomo, según el costosa,
+    consumidora de tiempo, poco ortodoxa, pero efectiva. La penúltima tiene
+    resultados poco confiables con derivados vegetales y con los de síntesis
+    es como echarle una bomba a los meso y macrorganismos del suelo.</p>
+  <p>La primera,aunque los cultivos protegidos son los más redituables y
+    cubren los costos más altos de operación, sería un desperdicio de la
+    infraestructura el tener cualquier otra cosa que no fuese el cultivo
+    principal; en algunos casos incluso llegaría a no ser costo-efectivo no
+    producir un ciclo.</p>
+  <p>¿Cómo conciliar ambas necesidades? La de producir de forma contínua y
+    la de cambiarle el cultivo al suelo para que se recupere hasta que le
+    vuelve a tocar.</p>
+  <p>La propuesta de fruta nómada, si bien corta y simple, implica un
+    cambio de paradigma. Como su nombre lo indica, hay que estarse moviendo
+    constantemente, y si no se puede mover la tierra, y el invernadero es
+    muy costoso para andar poniendo por todos lados, la alternativa es mover
+    la estructura que protege de un lugar a otro.</p>
+  <p>Hay historia de estructuras grandes, amplias que se han movido<a href="#fn5" class="footnote-ref" id="fnref5"
+      role="doc-noteref"><sup>5</sup></a>, y siendo el invernadero no tan
+    pesado, habría menor dificultad que estas. El reto es desarrollar la
+    técnica y la tecnología necesaria para implementarle.</p>
+  <h1 id="cómo-afectan-los-insumos-agrícolas-convencionales-a-las-funciones-del-suelo">¿Cómo
+    afectan los insumos agrícolas convencionales a las funciones del
+    suelo?</h1>
+  <ul>
+    <li>Los fertilizantes químicos:
+      <ul>
+        <li>En especial el nitrógeno, conducen a la pérdida de la materia
+          orgánica del suelo.</li>
+        <li>Junto con el agua de pozo de alta dureza o concentración de
+          minerales incrementa la salinidad del suelo, lo cuál afecta la capacidad
+          de las raíces de absorber nutrientes de manera adecuada, así también
+          afecta el desarrollo normal de los organismos del suelo.</li>
+      </ul>
+    </li>
+    <li>Los biocidas sintéticos también afectan la vida en el suelo y arriba
+      de el, en algunas ocasiones a largo plazo, como el de las abejas de la
+      miel y posibles depredadores de insectos depredadores de los que nos
+      afectan.</li>
+  </ul>
+  <p>Pero fruta nómada no solo busca reconciliar conservar el suelo en
+    buenas condiciones y mantenerlo productivo, sino mejorar en otras áreas
+    también:</p>
+  <p>El lector recordará que la agricultura protegida es de las que más
+    invierten en insumos. Pues bien, este uso tan intensivo en ocasiones
+    conduce al suelo a estados disfuncionales. ¿A qué nos referimos con
+    condiciones disfuncionales?</p>
+  <p>Por supuesto nos referimos a las opuestas a las funcionales, pero
+    ¿Cuáles son estas?¿Cuáles son las funciones del suelo?</p>
+  <h2 id="las-funciones-del-suelo6">Las funciones del suelo<a href="#fn6" class="footnote-ref" id="fnref6"
+      role="doc-noteref"><sup>6</sup></a></h2>
+  <p>Nuestras vidas, y la de todos los animales e insectos que se
+    alimentan en tierra dependen de los productores primarios (léase las
+    plantas, que capturan la energía de la luz solar en enlaces de azúcares
+    y de ahí <em>pal</em> real). Estas, a partir del la luz, del aire y de
+    los <em>jugos</em> que extraen del suelo construyen sus raíces, tallos,
+    hojas, flores y frutos.</p>
+  <p>Se puede saber que el suelo no está funcionando si la planta no
+    encuentra los <em>jugos</em>, se nos agüita, y en veces se compone con
+    el fertilizante químico.</p>
+  <p>¿Cómo entonces produce el suelo sus <em>jugos</em>?</p>
+  <h3 id="reciclaje-de-nutrientes">Reciclaje de nutrientes</h3>
+  <p>Una de las principales funciones del suelo es la del reciclaje de
+    nutrientes ¿A que se refiere? Curiosamente, el mismo <em>‘polvo de
+      estrellas’</em> que compone a las plantas, también nos compone a
+    nosotros, los animales y a los insectos, quienes, al comerse a las
+    plantas, obtienen así los materiales para construir sus propios cuerpos.
+    Pero no todo lo que se comen se convierte en parte de sus cuerpos, sino
+    que lo que no se asimila, se excreta. Es esta excreta la que, a través
+    de la acción de la lluvia, bichos, micro-bichitos y microorganismos se
+    <strong><em>recicla</em></strong>, alcanzando la zona de influencia de
+    las raíces y pasando a ser abono para las plantas. ¿Ha observado ud. los
+    escarabajos del estiércol hacer túneles debajo de la bosta o a los
+    zopilotes comerse lo que queda de un animal? Ahí esta usted atestiguando
+    el reciclaje de nutrientes.</p>
+  <p>En resumen, el reciclaje de nutrientes se compone de las siguientes
+    fases:</p>
+  <ol type="1">
+    <li>Consumo (por depredación, carroñeo o forrajeo).</li>
+    <li>Digestión y almacenamiento en el cuerpo del consumidor.</li>
+    <li>Excreción de lo que no se pudo absorber.</li>
+    <li>Descomposición mecánica y bioquímica de las excretas (o directamente
+      de los cadáveres).</li>
+    <li>Arrastre de los productos de la descomposición hacia la zona de
+      influencia de las raíces.</li>
+    <li>Absorción e incorporación de los productos de la descomposición en
+      partes de la planta</li>
+  </ol>
+  <p>Es entre el paso 5 y 6 que los nutrientes se encuentran disponibles
+    para cuando las raíces quieran tomarlo y son medibles de acuerdo a los
+    métodos analíticos convencionales.</p>
+  <p>Si nos quedamos solo con esto que les acabo de contar, solo debería
+    haber plantas donde se murieron animales, o donde cayó una bosta, pero
+    no es así, entonces ¿de donde sale lo demás?</p>
+  <p>Pues así cómo en las praderas, la sabana, los bosques y selvas, los
+    depredadores se comen a las presas (ej. los lobos a los bisontes o
+    venados, el jaguar al tapir y el león al ñu), también en el suelo, a una
+    escala microscópica, hay toda una cadena alimenticia en la que presas
+    son devoradas por depredadores.</p>
+  <p>¿Quienes son los depredadores y las presas? ¿Cuál es la fuente de
+    energía para esta cadena alimenticia?</p>
+  <p>Así como arriba de la tierra, abajo hay veces que el depredador
+    resulta presa, pero también se forma una estructura poblacional similar
+    a la de los ecosistemas tradicionales que se estudian en la escuela.</p>
+  <p>En un ecosistema tradicional, la mayor cantidad de peso lo tienen las
+    plantas, quiénes son las que tienen la capacidad de redirigir la energía
+    de la luz solar y aprovecharla para crecer y reproducirse.</p>
+  <p>Luego siguen los herbívoros -con un décimo del peso que tienen las
+    plantas en el mismo ecosistema-, como el ganado o los caballos, quienes
+    son presa de los carnívoros -quienes tendrían una centésima parte del
+    peso de las plantas o un décimo de los herbívoros- como los lobos o los
+    leones.</p>
+  <p>Por supuesto, esto es una sobre-simplificación de las relaciones
+    ecosistémicas, -por ejemplo, del comensalismo de los buitres al consumir
+    lo que dejan los leones- pero es una idea general</p>
+  <p>En el ecosistema del suelo, además de comer plantas<a href="#fn7" class="footnote-ref" id="fnref7"
+      role="doc-noteref"><sup>7</sup></a>
+    -que se clasifica en el grupo trófico de los fitófagos-, los
+    microorganismos obtienen energía y carbono de los residuos que quedan de
+    las raíces y parte aérea, que poco a poco van siendo consumidos por los
+    microorganismos y se dice que se están descomponiendo (allá en el rancho
+    dicen pudriendo, pero mejor reservar esa palabra para cuando esta
+    descomposición produce un mal olor, que no siempre es el caso).</p>
+  <p>Entonces, están los microorganismos comiéndose los residuos de las
+    plantas felizmente cuando ¡zas! que lega un protozoario, los persigue,
+    los acorrala o los alcanza y se los come… la presa tiene el tamaño de
+    una millonésima de un metro, o 0.000,001 metros de tamaño, mientras que
+    el protozoario tiene entre diez y -los más grandes- cien veces este
+    tamaño, o la décima parte de un milímetro.</p>
+  <p>Entonces, cuándo el protozoario se deshace de lo que le sobra de
+    comerse a los microorganismos, deja una bosta micro-microscópica, que,
+    si se encuentra en la zona de influencia de la raíz, pasa a ser un
+    micro-micro abono.</p>
+  <p>Ah, pero no hay no mas unos cuantos por aquí o por allá, hay miles de
+    millones de los microorganismos, y decenas de miles por cada
+    <strong><em>gramo</em></strong> de suelo, de tal suerte que todo el
+    tiempo hay micro-abonos nuevos listos para ser retomados por las
+    raíces.</p>
+  <p>¡Pero espere, que hay más! Además de los protozoarios, están los
+    nematodos que no se alimentan directamente de las plantas, sino que
+    también son depredadores de microorganismos (los que comen bacterias
+    -bacteriófagos- y los que perforan las hifas de los hongos, succionando
+    su contenido -micófagos-) y los depredadores, que cazan otros nematodos
+    y lo que puedan capturar.</p>
+  <p>¿Es todo? ¡En un suelo sano, nos falta mucho todavía! Seguimos con
+    los bichitos que con mucho esfuerzo se alcanzan a ver a simple vista, y
+    que miden generalmente alrededor de medio milímetro: nos referimos a dos
+    grupos muy grandes, los colémbolos y los ácaros. No se preocupe que la
+    vasta mayoría de estos últimos no son plaga, sino que andan de aquí para
+    allá, desmenuzando los residuos de las plantas y granitos de suelo para
+    exponer al aire más superficie y que los microorganismos aprovechen y
+    empiecen a descomponerle, reproduciéndose incrementando la cantidad de
+    estos, y luego llegan los protozoarios y los nematodos a comerse los
+    microorganismos que crecieron y también los unos a los otros. Luego
+    regresan los ácaros y colémbolos, ¡a comerse a todos!</p>
+  <p>Pero no solo hay los que se alimentan de esta forma, sino que también
+    los que se especializan en depredar otros ácaros o colémbolos. Así como
+    arriba del suelo, ¡abajo hay aún más diversidad! Bueno, podría haber si
+    no pasaran con la rastra a destruirles la casa a todos estos
+    microorganismos, protozoarios, nematodos que no comen de las plantas,
+    colémbolos y ácaros.</p>
+  <p>¿Ya son todos? ¡No! Aún nos faltan los anélidos, que son las buenas
+    de siempre lombrices de tierra. ¿Qué son buenas? Si claro, estas se
+    alimentan de una forma similar de la que se describió para los ácaros,
+    pero en una escala más grande. ¿Apoco no se comen las raíces? Solo
+    cuando ya se las estaban pudriendo o de plano no hay suficientes
+    residuos que comer, es que las lombrices llegan a cortar las raíces,
+    para desmenuzarlas y que críen mas microorganismos y compañía, para
+    regresar y comérselos a todos. Si les mantenemos un ambiente (el suelo)
+    con comida, van no más a pasarse alrededor de las raíces sanas. Más
+    adelante se explica con más detalle como mantener el suelo con harta
+    comida para todos los habitantes del mismo.</p>
+  <p>Ahora sí ya acabamos, ¿verdad? ¡Aún no! Pero hasta aquí le vamos a
+    dejar. Faltan muchos bichitos como los ciempiés, milpiés o escarabajos y
+    animales que tendremos que dejar para otra ocasión, pero estos también
+    hacen su chamba de darle vuelta a los nutrientes en el suelo. Sin
+    embargo, nos falta un grupo muy especial de microorganismos que tienen
+    una relación muy cercana con la mayoría de las plantas para mas
+    adelante, que nos falta un tema muy importante.</p>
+  <p>¿Se acuerda cual era el primer paso que hacían las plantas para
+    capturar y a aprovechar la energía del sol? La fotosíntesis que nos
+    convierte el dióxido de carbono -ese que contribuye mayoritariamente al
+    cambio climático- y agua en azúcares, que mediante los maravillosos
+    mecanismos bioquímicos se convierten en más hojas, más tallos, más
+    flores, más frutos y más raíces.</p>
+  <p>Pero, ¿Qué cree? ¡Esa no es toda la historia! Dependiendo del tipo de
+    planta y las condiciones en las que se encuentre, entre un diez y un
+    cincuenta por ciento de todas las azúcares que hacen las plantas, en
+    lugar de convertirse en partes del cuerpo de la planta, esta construye
+    algo así como un suero, ¡que inyecta al suelo a través de las raíces! A
+    este suero le llamamos exudado radicular.</p>
+  <p>Este suero, que le cuesta su trabajo hacer a la planta, no lo inyecta
+    al suelo de a gratis, sino que va a obtener algo a cambio de la
+    siguiente forma:</p>
+  <ul>
+    <li>Nuestra menesterosa planta se pone a hacer fotosíntesis y además de
+      construir y mantener las partes de su cuerpo, inyecta a través de las
+      raíces los exudados radiculares.</li>
+    <li>Al llegar afuera de las raíces, este suero contiene mucha comida
+      para los microorganismos, pero es casi solo de un tipo, que sería el
+      agüita de fruta, un bolillo, las tortillas de harina, el arroz blanco,
+      unos tozos de yuca o camote blanco o malanga y tal vez un tanto de
+      cerveza, pero, ¿Y el guisado? ¿La fruta? ¿Las verduras?</li>
+    <li>Para completar las raciones, los microorganismos se ponen a chambear
+      con la energía de los exudados y extraen del mismo suelo el guisadito,
+      las frutas y las verduras. Cuando no hay de otra, del mismo aire jalan
+      el componente principal de las proteínas, ese que le echan de a montón
+      en la parcela: el mentado nitrógeno. ¡Así es! El nitrógeno compone por
+      ahí del 78% del aire que estamos respirando, y hay toneladas de este
+      sobre cada parcela, solo que no está en una forma disponible para las
+      plantas, pero unos microorganismos tienen los mecanismos bioquímicos
+      para convertirlo de aire a proteína, pero ocupa bastante energía. Y ya
+      que estamos por aquí, hay un grupo de microorganismos que pueden fijar
+      el nitrógeno del aire, que hacen un equipo muy cercano con otro grupo
+      específico de plantas para hacer aún más eficiente esta conversión del
+      nitrógeno en proteína: las leguminosas o la familia de los frijolitos,
+      las lentejas, las habas y los garbanzos.<br />
+    </li>
+    <li>Ya está también el guisado, pero nos faltan las frutas y las
+      verduras, es decir, los minerales. Los microorganismos van a buscar
+      donde sea para obtener los minerales porque no pueden crecer sin ellos,
+      así como para nosotros, para ellos son indispensables para construir y
+      mantener sus cuerpos, entonces van a hacer hasta lo imposible para
+      obtenerlos.<br />
+      Pero dentro de la categoría de posible, van a buscar alrededor de las
+      partículas de suelo y en la humedad que les rodea para encontrarles, y,
+      si no encuentran, se van a poner su casco-lámpara, van a sacar su pico y
+      pala y van a empezar a minar <em>dentro</em> de las partículas de suelo
+      mediante ácidos y enzimas que ellos mismos producen. -Habiéndose
+      beneficiado de los minerales del suelo, nuestro amigo microorganismo ve
+      que esta bueno el vecindario y se pone a construir su casa. ¿Cómo
+      construye su casa un microorganismo? ¡Con exudados propios! Que son
+      diferentes de los de las plantas y hacen, a la larga que las condiciones
+      sean mejores para sus camaradas microorganismos y sus socias las
+      plantas. ¿Cuáles son estas condiciones? El suelo se hace bien poroso y
+      más obscuro, no se encharca y se mantiene húmedo más tiempo después de
+      las lluvias y no se cuartea cuando se seca, tiene más vida moviéndose
+      por ahí y huele bien rico cuando por accidente lo perturbamos.
+      Seguramente recuerda algún bosque o algún jardín que tiene las
+      características que se han listado, y, a pesar de esto, a veces pasamos
+      la rastra dos o tres veces hasta dejar el suelo como para hacer
+      ladrillos. -Entonces los microorganismos se alimentan de los exudados de
+      las raíces, de los residuos de raíces viejas, hojas y tallos secos, y de
+      los minerales del suelo; construyen su casa y la mantienen en pleno
+      funcionamiento, se reproducen y se los comen y ya que los digirieron lo
+      que sobra lo expulsan y ese micro-abono queda -con las proteínas
+      (nitrógeno) y los minerales- disponible para las raíces para que lo
+      absorban. Entonces, se piensa que la relación de las plantas con la vida
+      en el suelo es simbiótica, es decir, no podría existir unos sin los
+      otros, bueno, al menos en condiciones naturales, que en el laboratorio y
+      en la hidroponía nos saltamos todos esos pasos que han existido poquito
+      después de que aparecieron las plantas sobre la tierra. -Las plantas se
+      nutren de este micro-abono, repetido miles de millones de veces por cada
+      gramo de suelo y al estar más nutridas, pueden crecer más para arriba
+      para captar más luz, y para abajo, para abarcar más suelo, liberar más
+      exudados y obtener más nutrientes en un ciclo de retroalimentación
+      positiva.</li>
+  </ul>
+  <p>¿Hay forma de ver que este ciclo esté funcionando? Cuando los
+    microorganismos están trabajando bien y de buenas, se forma una capa de
+    suelo alrededor de las raíces que se queda adherida a estas -por los
+    exudados y cuerpos de los microorganismos- cuando se saca la planta. Se
+    le llama rizocoraza.</p>
+  <p>Entonces, ¿la influencia de las raíces solo abarca la rizocoraza? La
+    mayor parte de la influencia de las raíces se encuentra en esta zona,
+    que forma la mayor parte de lo que llaman la zona rizosférico, que se
+    extiende entre uno y, echándole muchas ganas, 10 milímetros desde la
+    raíz. ¿Apoco las plantas de ahí tienen que sacar todos los minerales que
+    necesitan? ¿No suena a mucho, verdad?</p>
+  <p>Imagínate que cuándo se destruyó la casa de los microorganismos del
+    suelo, y no hay nutrientes en sus alacenas, tiene uno que echarles
+    fertilizante químico para que pueda encontrar nutrientes disponibles,
+    pero es como si a uno no más le den de comer hamburguesas y cuando se
+    las traen, son mil de un solo jalón si es a suelo en gránulos.</p>
+  <p>Lo bueno que, así como las leguminosas se alían con un grupo muy
+    específico que fija nitrógeno formando unos compartimentos especiales en
+    las raíces, casi todas las plantas cultivadas -con excepción de la
+    familia del brocoli-, incluyendo a las leguminosas, forman una alianza
+    muy cercana con unos honguitos, que, por un lado, expanden sus hifas
+    -parecen hilitos muy delgados y largos que absorben, transportan y
+    también exudan nutrientes- a las zonas alejadas de las raíces, y por el
+    otro, ¡se meten hasta la cocina de las raíces! Queremos decir que las
+    hifas se introducen dentro de las células de las raíces y ahí, hacen un
+    intercambio de los exudados radiculares (antes de que salgan de las
+    raíces) por minerales que transportó el hongo desde varios centímetros
+    de la raíz, hasta la cocina de la planta. Y no solo eso, sino que
+    también transportan una parte de los exudados a través de as hifas y los
+    liberan lejos de la raíz, simulando lo que sucede inmediatamente junto a
+    la raíz, pero en todo el suelo (bueno, hasta cierta profundidad).</p>
+  <p>Y así pués, hay un sin número de relaciones de cooperación y
+    depredación que mantienen circulando los nutrientes en el suelo. Nuestro
+    trabajo es procurar y mantener en condiciones óptimas la vida en el
+    suelo, que es lo que buscamos lograr con este sistema.</p>
+  <aside id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+    <hr />
+    <ol>
+      <li id="fn1">
+        <p>
+          https://www.gob.mx/agricultura/prensa/agricultura-protegida-ubica-a-mexico-entre-los-principales-productores-de-frutas-y-hortalizas?idiom=es%C2%A0<a
+            href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p>
+      </li>
+      <li id="fn2">
+        <p>https://www.sciencedirect.com/science/article/pii/S0013935120305703<a href="#fnref2" class="footnote-back"
+            role="doc-backlink">↩︎</a></p>
+      </li>
+      <li id="fn3">
+        <p>https://bioneers.org/crop-rotation-improves-soil-health-yields/<a href="#fnref3" class="footnote-back"
+            role="doc-backlink">↩︎</a></p>
+      </li>
+      <li id="fn4">
+        <p>https://ssl.acesag.auburn.edu/pubs/docs/A/ANR-0856/ANR-0856-archive.pdf<a href="#fnref4"
+            class="footnote-back" role="doc-backlink">↩︎</a></p>
+      </li>
+      <li id="fn5">
+        <p>
+          https://www.npr.org/sections/thetwo-way/2016/11/15/502165456/gigantic-shield-moves-into-place-to-cover-exploded-chernobyl-reactor<a
+            href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p>
+      </li>
+      <li id="fn6">
+        <p>http://soilquality.org/functions.html<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p>
+      </li>
+      <li id="fn7">
+        <p>que en niveles bajos puede ser estimulante para el
+          crecimiento, se tiene que mantener bajo control para evitar pérdidas
+          económicas, por ejemplo, los nematodos fitófagos formadores de
+          agallas.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p>
+      </li>
+    </ol>
+  </aside>
+</body>
+
+</html>
